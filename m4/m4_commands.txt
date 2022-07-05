@@ -35,7 +35,7 @@ consul acl bootstrap
 export CONSUL_HTTP_TOKEN=SECRETID_VALUE
 
 # Windows
-$env:CONSUL_HTTP_TOKEN="SECRETID_VALUE"
+$env:CONSUL_HTTP_TOKEN="6ff48aa8-a04f-fa44-110c-28c39adb5625"
 
 ## Now we're going to configure Consul using Terraform 
 # Set up paths, policies, and tokens
@@ -44,9 +44,8 @@ terraform plan -out consul.tfplan
 terraform apply consul.tfplan
 
 # Get token values for Mary and Sally and record them for later
-consul acl token read -id ACCESSOR_ID_MARY
-consul acl token read -id ACCESSOR_ID_SALLY
-
+consul acl token read -id fdd4423a-567f-ffce-4ad8-5537fcb308a0
+consul acl token read -id b2e22c0d-50ca-f44d-c460-800014bac870
 # Go back to the main m4 folder
 cd ..
 
@@ -64,7 +63,7 @@ cd ..\m3
 export CONSUL_HTTP_TOKEN=SECRETID_VALUE
 
 # Windows
-$env:CONSUL_HTTP_TOKEN="SECRETID_VALUE"
+$env:CONSUL_HTTP_TOKEN="fdd4423a-567f-ffce-4ad8-5537fcb308a0"
 
 # Now we can initialize the backend config
 terraform init -backend-config="path=networking/state/globo-primary"

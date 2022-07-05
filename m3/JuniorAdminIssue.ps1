@@ -1,11 +1,11 @@
 # Import the AWS module
 Import-Module AWSPowerShell.NetCore
 
-#Select the AWS profile deep-dive
-Set-AWSCredential -ProfileName "deep-dive"
+Select the AWS profile
+Set-AWSCredential -ProfileName "dil-networking-sandbox"
 
 #Set the default region as applicable
-$region = "us-east-1"
+$region = "eu-central-1"
 Set-DefaultAWSRegion -Region $region
 
 #Get the VPC and AZs
